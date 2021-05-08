@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # BASH menu script for Fresh Kali Installs
-#   - chmod +x fki.sh
-#   - bash fki.sh
+# https://github.com/samuelhogg/scripts
+# by Samuel Hogg
 
 red='\e[31m'
 green='\e[32m'
