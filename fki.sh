@@ -91,7 +91,7 @@ function ssh_keys() {
 
 function install_tools() {
 	echo -ne "
-	$(ColorBlue 'a)') Visual Studio Code
+	$(ColorBlue 'a)') ProtonVPN
 	$(ColorBlue 'b)') Visual Studio Code
 	$(ColorBlue 'c)') Atom.io
 	$(ColorBlue 'x)') Exit Sub Menu
