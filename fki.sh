@@ -92,13 +92,15 @@ function ssh_keys() {
 function install_tools() {
 	echo -ne "
 	$(ColorBlue 'a)') Visual Studio Code
-	$(ColorBlue 'b)') Atom.io
+	$(ColorBlue 'b)') Visual Studio Code
+	$(ColorBlue 'c)') Atom.io
 	$(ColorBlue 'x)') Exit Sub Menu
 	$(ColorOrange 'Choose an option:') "
 			read a
 			case $a in
-				a) curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -o ~/Downloads/vscode.deb && sudo apt install ~/Downloads/vscode.deb ; menu ;;
-				b) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb ; menu ;;
+				a) wget "https://protonvpn.com/download/protonvpn-stable-release_1.0.0-1_all.deb" -O ~/Downloads/protonvpn.deb && sudo apt install ~/Downloads/protonvpn.deb ; menu ;;
+				b) curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -o ~/Downloads/vscode.deb && sudo apt install ~/Downloads/vscode.deb ; menu ;;
+				c) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb ; menu ;;
 				x) menu ;;
 				*) echo -e $red"Wrong option."$clear; WrongCommand;;
 			esac
