@@ -98,7 +98,7 @@ function install_tools() {
 			read a
 			case $a in
 				a) curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -o ~/Downloads/vscode.deb && sudo apt install ~/Downloads/vscode.deb ; menu ;;
-				b) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb; menu ;;
+				b) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb ; menu ;;
 				x) menu ;;
 				*) echo -e $red"Wrong option."$clear; WrongCommand;;
 			esac
