@@ -11,24 +11,23 @@ blue='\e[34m'
 clear='\e[0m'
 
 function banner(){
-	printf "$blue                                       
- FFFFFFFFFFFFFFFFFFFFFF KKKKKKKKK    KKKKKKK IIIIIIIIIII
- F::::::::::::::::::::F K:::::::K    K:::::K I:::::::::I
- F::::::::::::::::::::F K:::::::K    K:::::K I:::::::::I
- FF::::::FFFFFFFFF::::F K:::::::K   K::::::K II:::::::II
-   F:::::F       FFFFFF KK::::::K  K:::::KKK   I:::::I  
-   F:::::F                K:::::K K:::::K      I:::::I  
-   F::::::FFFFFFFFFF      K::::::K:::::K       I:::::I  
-   F:::::::::::::::F      K:::::::::::K        I:::::I  
-   F:::::::::::::::F      K:::::::::::K        I:::::I  
-   F::::::FFFFFFFFFF      K::::::K:::::K       I:::::I  
-   F:::::F                K:::::K K:::::K      I:::::I  
-   F:::::F              KK::::::K  K:::::KKK   I:::::I  
- FF:::::::FF            K:::::::K   K::::::K II:::::::II
- F::::::::FF            K:::::::K    K:::::K I:::::::::I
- F::::::::FF            K:::::::K    K:::::K I:::::::::I
- FFFFFFFFFFF            KKKKKKKKK    KKKKKKK IIIIIIIIIII										
-						by Samuel"
+	printf "$blue     
+#################################
+##                             ## 
+##  888888888 88      a8P  88  ## 	 
+##  88        88    .88'   88  ## 
+##  88        88   88'     88  ##
+##  88888     88 d88       88  ##
+##  88'''     8888'88.     88  ##
+##  88        88P   Y8b    88  ##
+##  88        88     '88.  88  ##
+##  88        88       Y8b 88  ##
+##                             ##
+################### by Samuel ###
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       FRESH KALI INSTALL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"
 }
 
 banner
@@ -106,6 +105,23 @@ function install_tools() {
 			esac
 }
 
+function install_ctf_tools() {
+	echo -ne "
+	$(ColorBlue 'a)') ProtonVPN
+	$(ColorBlue 'b)') Visual Studio Code
+	$(ColorBlue 'c)') Atom.io
+	$(ColorBlue 'x)') Exit Sub Menu
+	$(ColorOrange 'Choose an option:') "
+			read a
+			case $a in
+				a) wget "https://protonvpn.com/download/protonvpn-stable-release_1.0.0-1_all.deb" -O ~/Downloads/protonvpn.deb && sudo apt install ~/Downloads/protonvpn.deb && sudo apt update && sudo apt install protonvpn ; menu ;;
+				b) curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -o ~/Downloads/vscode.deb && sudo apt install ~/Downloads/vscode.deb ; menu ;;
+				c) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb ; menu ;;
+				x) menu ;;
+				*) echo -e $red"Wrong option."$clear; WrongCommand;;
+			esac
+}
+
 ColorGreen(){
 	echo -ne $green$1$clear
 }
@@ -125,6 +141,7 @@ $(ColorBlue '3)') Change Keyboard Layout
 $(ColorBlue '4)') Change Password
 $(ColorBlue '5)') Replace default SSH keys
 $(ColorBlue '6)') Install Tools
+$(ColorBlue '7)') Install ctf Tools
 $(ColorBlue '0)') Exit
 $(ColorOrange 'Choose an option:') "
         read a
@@ -135,6 +152,7 @@ $(ColorOrange 'Choose an option:') "
 	        4) change_password ; menu ;;
 	        5) ssh_keys ; menu ;;
 			6) install_tools ; menu ;;
+			7) install_ctf_tools ; menu ;;
 		0) exit 0 ;;
 		*) echo -e $red"Wrong option."$clear; WrongCommand;;
         esac
