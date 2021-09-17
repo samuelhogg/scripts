@@ -110,6 +110,7 @@ function install_ctf_tools() {
 	$(ColorBlue 'a)') ProtonVPN
 	$(ColorBlue 'b)') Visual Studio Code
 	$(ColorBlue 'c)') Atom.io
+	$(ColorBlue 'd)') tmux
 	$(ColorBlue 'x)') Exit Sub Menu
 	$(ColorOrange 'Choose an option:') "
 			read a
@@ -117,6 +118,7 @@ function install_ctf_tools() {
 				a) wget "https://protonvpn.com/download/protonvpn-stable-release_1.0.0-1_all.deb" -O ~/Downloads/protonvpn.deb && sudo apt install ~/Downloads/protonvpn.deb && sudo apt update && sudo apt install protonvpn ; menu ;;
 				b) curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -o ~/Downloads/vscode.deb && sudo apt install ~/Downloads/vscode.deb ; menu ;;
 				c) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb ; menu ;;
+				d) sudo apt install tmux ; menu ;;
 				x) menu ;;
 				*) echo -e $red"Wrong option."$clear; WrongCommand;;
 			esac
