@@ -48,12 +48,18 @@ function keyboard_layout() {
 	echo -ne "
 	$(ColorBlue 'a)') Change to UK Keyboard Layout
 	$(ColorBlue 'b)') Reconfigure Keyboard Configuartion
+	$(ColorBlue 'c)') Change to UK Timezone
+	$(ColorBlue 'd)') Reconfigure Timezone Configuartion
+	$(ColorBlue 'e)') Install Kali Gnome Desktop
 	$(ColorBlue 'x)') Exit Sub Menu
 	$(ColorOrange 'Choose an option:') "
 			read a
 			case $a in
 				a) setxkbmap gb ; menu ;;
 				b) sudo dpkg-reconfigure keyboard-configuration ; menu ;;
+				c) sudo timedatectl set-timezone Europe/London ; menu ;;
+				d) sudo dpkg-reconfigure tzdata ; menu ;;
+				e) sudo apt update && sudo apt install -y kali-desktop-gnome ; menu ;;
 				x) menu ;;
 				*) echo -e $red"Wrong option."$clear; WrongCommand;;
 			esac
@@ -93,6 +99,7 @@ function install_tools() {
 	$(ColorBlue 'a)') ProtonVPN
 	$(ColorBlue 'b)') Visual Studio Code
 	$(ColorBlue 'c)') Atom.io
+	$(ColorBlue 'd)') tmux
 	$(ColorBlue 'x)') Exit Sub Menu
 	$(ColorOrange 'Choose an option:') "
 			read a
@@ -100,6 +107,7 @@ function install_tools() {
 				a) wget "https://protonvpn.com/download/protonvpn-stable-release_1.0.0-1_all.deb" -O ~/Downloads/protonvpn.deb && sudo apt install ~/Downloads/protonvpn.deb && sudo apt update && sudo apt install protonvpn ; menu ;;
 				b) curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -o ~/Downloads/vscode.deb && sudo apt install ~/Downloads/vscode.deb ; menu ;;
 				c) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb ; menu ;;
+				d) sudo apt install tmux ; menu ;;
 				x) menu ;;
 				*) echo -e $red"Wrong option."$clear; WrongCommand;;
 			esac
@@ -107,10 +115,10 @@ function install_tools() {
 
 function install_ctf_tools() {
 	echo -ne "
-	$(ColorBlue 'a)') ProtonVPN
-	$(ColorBlue 'b)') Visual Studio Code
-	$(ColorBlue 'c)') Atom.io
-	$(ColorBlue 'd)') tmux
+	$(ColorBlue 'a)') aaa
+	$(ColorBlue 'b)') bbb
+	$(ColorBlue 'c)') ccc
+	$(ColorBlue 'd)') ddd
 	$(ColorBlue 'x)') Exit Sub Menu
 	$(ColorOrange 'Choose an option:') "
 			read a
