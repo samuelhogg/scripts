@@ -61,7 +61,7 @@ function keyboard_layout() {
 				d) sudo dpkg-reconfigure tzdata ; menu ;;
 				e) sudo apt update && sudo apt install -y kali-desktop-gnome ; menu ;;
 				x) menu ;;
-				*) echo -e $red"Wrong option." $clear ; WrongCommand ;;
+				*) echo -e $red"Wrong option."$clear; WrongCommand ;;
 			esac
 }
 
@@ -76,7 +76,7 @@ function change_password() {
 				a) passwd ; menu ;;
 				b) sudo passwd root ; menu ;;
 				x) menu ;;
-				*) echo -e $red"Wrong option."$clear; WrongCommand;;
+				*) echo -e $red"Wrong option."$clear; WrongCommand ;;
 			esac
 }
 
@@ -109,7 +109,7 @@ function install_tools() {
 				c) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb ; menu ;;
 				d) sudo apt install tmux ; menu ;;
 				x) menu ;;
-				*) echo -e $red"Wrong option."$clear; WrongCommand;;
+				*) echo -e $red"Wrong option."$clear; WrongCommand ;;
 			esac
 }
 
@@ -128,7 +128,7 @@ function install_ctf_tools() {
 				c) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb ; menu ;;
 				d) sudo apt install tmux ; menu ;;
 				x) menu ;;
-				*) echo -e $red"Wrong option."$clear; WrongCommand;;
+				*) echo -e $red"Wrong option."$clear; WrongCommand ;;
 			esac
 }
 
@@ -161,10 +161,10 @@ $(ColorOrange 'Choose an option:') "
 	        3) keyboard_layout ; menu ;;
 	        4) change_password ; menu ;;
 	        5) ssh_keys ; menu ;;
-			6) install_tools ; menu ;;
-			7) install_ctf_tools ; menu ;;
+		6) install_tools ; menu ;;
+		7) install_ctf_tools ; menu ;;
 		0) exit 0 ;;
-		*) echo -e $red"Wrong option."$clear; WrongCommand;;
+		*) echo -e $red"Wrong option."$clear; WrongCommand ;;
         esac
 }
 
