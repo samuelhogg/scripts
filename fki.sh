@@ -120,8 +120,8 @@ function install_tools() {
 
 function install_ctf_tools() {
 	echo -ne "
-	$(ColorBlue 'a)') aaa
-	$(ColorBlue 'b)') bbb
+	$(ColorBlue 'a)') RustScan
+	$(ColorBlue 'b)') ffuf
 	$(ColorBlue 'c)') ccc
 	$(ColorBlue 'd)') ddd
 	$(ColorBlue 'x)') Exit Sub Menu
