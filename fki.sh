@@ -128,8 +128,8 @@ function install_ctf_tools() {
 	$(ColorOrange 'Choose an option:') "
 			read a
 			case $a in
-				a) wget "https://protonvpn.com/download/protonvpn-stable-release_1.0.0-1_all.deb" -O ~/Downloads/protonvpn.deb && sudo apt install ~/Downloads/protonvpn.deb && sudo apt update && sudo apt install protonvpn ; menu ;;
-				b) curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -o ~/Downloads/vscode.deb && sudo apt install ~/Downloads/vscode.deb ; menu ;;
+				a) RustScan ; menu ;;
+				b) sudo git clone https://github.com/ffuf/ffuf /opt/ffuf ; cd /opt/ffuf ; go get ; go build ; menu ;;
 				c) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb ; menu ;;
 				d) sudo apt install tmux ; menu ;;
 				x) menu ;;
