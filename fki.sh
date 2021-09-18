@@ -32,6 +32,10 @@ function banner(){
 
 banner
 
+function WrongCommand() {
+    echo "ddd"
+}
+
 function version_check() {
     echo ""
 	uname -a && grep VERSION /etc/os-release
