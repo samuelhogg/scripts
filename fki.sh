@@ -61,7 +61,7 @@ function keyboard_layout() {
 				d) sudo dpkg-reconfigure tzdata ; menu ;;
 				e) sudo apt update && sudo apt install -y kali-desktop-gnome ; menu ;;
 				x) menu ;;
-				*) echo -e $red"Wrong option."$clear; WrongCommand;;
+				*) echo -e $red"Wrong option." $clear ; WrongCommand ;;
 			esac
 }
 
