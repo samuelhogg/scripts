@@ -34,6 +34,7 @@ banner
 
 function WrongCommand() {
     echo "ddd"
+    menu
 }
 
 function version_check() {
@@ -168,7 +169,7 @@ $(ColorOrange 'Choose an option:') "
 		6) install_tools ; menu ;;
 		7) install_ctf_tools ; menu ;;
 		0) exit 0 ;;
-		*) echo -e $red"Wrong option."$clear; menu;;
+		*) echo -e $red"Wrong option."$clear; WrongCommand ;;
         esac
 }
 
