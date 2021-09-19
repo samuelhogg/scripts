@@ -122,7 +122,7 @@ function install_ctf_tools() {
 	echo -ne "
 	$(ColorBlue 'a)') RustScan
 	$(ColorBlue 'b)') ffuf
-	$(ColorBlue 'c)') ccc
+	$(ColorBlue 'c)') Gobuster
 	$(ColorBlue 'd)') ddd
 	$(ColorBlue 'x)') Exit Sub Menu
 	$(ColorOrange 'Choose an option:') "
@@ -130,7 +130,7 @@ function install_ctf_tools() {
 			case $a in
 				a) RustScan ; menu ;;
 				b) sudo git clone https://github.com/ffuf/ffuf /opt/ffuf ; cd /opt/ffuf ; go get ; go build ; menu ;;
-				c) wget "https://atom.io/download/deb" -O ~/Downloads/atom.deb && sudo apt install ~/Downloads/atom.deb ; menu ;;
+				c) sudo apt install gobuster ; menu ;;
 				d) sudo apt install tmux ; menu ;;
 				x) menu ;;
 				*) echo -e $red"Wrong option."$clear; WrongCommand ;;
