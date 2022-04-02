@@ -5,16 +5,17 @@
 import speedtest
 
 s = speedtest.Speedtest()
+c = s.get_config()
 
-#Bytes for conversion
 bytes_num = 1000000
 
-#Get download spead
 dws = round(s.download()/bytes_num, 2)
 
-#Get upload speed
 ups = round(s.upload()/bytes_num, 2)
 
-#Print internet speed
 print(f'My download speed is: {dws} Mbps')
 print(f'My upload speed is: {ups} Mbps')
+print('IP: ', c['client']['ip'])
+print('Lat: ', c['client']['lat'])
+print('Lon: ', c['client']['lon'])
+print('ISP: ', c['client']['isp'])
